@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InvoicesController;
+use App\Http\Controllers\SectionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/invoices', [InvoicesController::class, 'index']);
+Route::resource('invoices', InvoicesController::class);
+Route::resource('sections', SectionsController::class);
 
 
 Route::get('/{page}', 'App\Http\Controllers\AdminController@index');
