@@ -13,15 +13,14 @@ class AdminController extends Controller
      */
     public function index($id)
     {
-        if(view()->exists($id)){
-            return view($id);
-        }
-        else
-        {
-            return view('404');
+        // Check if the view exists before rendering
+        if (view()->exists($id)) {
+            return view($id); // Render the specified view
+        } else {
+            return view('404'); // Render a 404 error view if the view does not exist
         }
 
-     //   return view($id);
+        // return view($id); // Alternative return (commented out)
     }
 
     /**
@@ -31,7 +30,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        // Show the form for creating a new resource
     }
 
     /**
@@ -42,7 +41,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Store the newly created resource in storage
     }
 
     /**
@@ -53,7 +52,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        // Display the specified resource
     }
 
     /**
@@ -64,7 +63,7 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Show the form for editing the specified resource
     }
 
     /**
@@ -76,7 +75,7 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Update the specified resource in storage
     }
 
     /**
@@ -87,6 +86,6 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Remove the specified resource from storage
     }
 }
